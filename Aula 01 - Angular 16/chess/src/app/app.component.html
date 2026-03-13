@@ -1,4 +1,12 @@
 <!-- Meus componentes -->
 <div class="mainDiv">
-  <app-button (OnClick)="wasClicked()" [label]="this.count.toString()"/>
+  <app-button
+    (OnClick)="wasClicked()"
+    [label]="this.count.toString()"
+  />
+
+  <!-- OnClick -> binding de output -->
+  <!-- label -> binding de input -->
+
+  <app-input (dataChange)="changed(text = $event)" [text]="text"/>
 </div>

@@ -8,15 +8,17 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ButtonComponent {
   isClicked = false;
 
+  // binding de output
   @Output()
   OnClick: EventEmitter<void> = new EventEmitter();
 
+  // binding de input
   @Input()
   label: string = "";
 
   clicked = () => {
     this.isClicked = !this.isClicked;
     console.log("clicado: ", this.isClicked);
-    this.OnClick.emit();
+    this.OnClick.emit(); // emite para o componente pai
   }
 }

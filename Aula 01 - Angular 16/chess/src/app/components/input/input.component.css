@@ -1,0 +1,9 @@
+* {
+    font-family: verdana;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
