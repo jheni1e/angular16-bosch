@@ -1,1 +1,5 @@
-<p>comida-page works!</p>
+<div class="pessoas">
+  <div class="pessoa" *ngFor="let p of pessoas; track: $index">
+    {{p.name}}
+  </div>
+</div>
