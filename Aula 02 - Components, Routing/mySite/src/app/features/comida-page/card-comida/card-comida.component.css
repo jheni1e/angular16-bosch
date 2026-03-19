@@ -1,7 +1,7 @@
 .comidas {
     display: flex;
     flex-flow: row wrap;
-    gap: 3vw;
+    gap: 2vw;
     padding: 1vw;
 }
 

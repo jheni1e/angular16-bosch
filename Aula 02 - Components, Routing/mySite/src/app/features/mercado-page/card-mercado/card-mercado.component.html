@@ -1,1 +1,8 @@
-<p>card-mercado works!</p>
+<div class="mercados">
+  <div class="mercado" *ngFor="let m of mercados; track $index">
+    <img src="{{ m.image }}" />
+    <p>{{ m.name }}</p>
+    <p>R$ {{ m.price }}</p>
+    <p>⭐ {{ m.nota }} — {{ m.tempo_entrega }} min</p>
+  </div>
+</div>
