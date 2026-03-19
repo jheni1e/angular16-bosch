@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import MockComidas, { IComida } from 'src/app/mocks/Comida.mock';
+import { IComida } from 'src/app/mocks/Comida.mock';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-card-comida',
@@ -7,9 +8,6 @@ import MockComidas, { IComida } from 'src/app/mocks/Comida.mock';
   styleUrls: ['./card-comida.component.css']
 })
 export class CardComidaComponent {
-  protected comidas: IComida[] = []
-
-  constructor() {
-    this.comidas = MockComidas;
-  }
+  @Input()
+  comidas: IComida[] = []
 }

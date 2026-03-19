@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import MockMercados, { IMercado } from 'src/app/mocks/Mercado.mock';
+import { IMercado } from 'src/app/mocks/Mercado.mock';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-card-mercado',
@@ -7,9 +8,6 @@ import MockMercados, { IMercado } from 'src/app/mocks/Mercado.mock';
   styleUrls: ['./card-mercado.component.css']
 })
 export class CardMercadoComponent {
-  protected mercados: IMercado[] = []
-
-  constructor() {
-    this.mercados = MockMercados;
-  }
+  @Input()
+  mercados: IMercado[] = []
 }
