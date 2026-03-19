@@ -15,4 +15,5 @@ input {
     border: none;
     border-bottom: .0625px solid black;
     padding: 0.625rem;
+    width: 250px;
 }
