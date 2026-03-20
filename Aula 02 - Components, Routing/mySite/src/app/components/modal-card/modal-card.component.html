@@ -1,0 +1,9 @@
+<div class="modal-bg"></div>
+<div class="modal-container">
+  <h2>{{ item.name }}</h2>
+  <p>Preço: R$ {{ item.price }}💸</p>
+  <p>Avaliação: {{ item.nota }} ⭐</p>
+  <p>Entrega em até {{ item.tempo_entrega }} minutos 🛵</p>
+
+  <button (click)="changed(false)">❌</button>
+</div>

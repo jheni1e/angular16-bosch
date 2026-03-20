@@ -10,4 +10,14 @@ import { Input } from '@angular/core';
 export class CardComidaComponent {
   @Input()
   comidas: IComida[] = []
+
+  @Input()
+  abriu: boolean = false;
+
+  itemSelecionado!: IComida;
+
+  abrirModal(c: IComida) {
+    this.itemSelecionado = c;
+    this.abriu = true;
+  }
 }

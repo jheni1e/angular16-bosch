@@ -10,4 +10,14 @@ import { Input } from '@angular/core';
 export class CardMercadoComponent {
   @Input()
   mercados: IMercado[] = []
+
+  @Input()
+  abriu: boolean = false;
+
+  itemSelecionado!: IMercado;
+
+  abrirModal(m: IMercado) {
+    this.itemSelecionado = m;
+    this.abriu = true;
+  }
 }

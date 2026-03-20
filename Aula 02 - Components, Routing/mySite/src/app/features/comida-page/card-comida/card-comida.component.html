@@ -1,8 +1,9 @@
 <div class="comidas">
-  <div class="comida" *ngFor="let c of comidas; track $index">
+  <div class="comida" *ngFor="let c of comidas; track $index" (click)="abrirModal(c)">
     <img src="{{ c.image }}" />
     <p>{{ c.name }}</p>
     <p>R$ {{ c.price }}</p>
     <p>⭐ {{ c.nota }} — {{ c.tempo_entrega }} min</p>
   </div>
 </div>
+<app-modal-card *ngIf="abriu" [show]="abriu" (dataChange)="abriu = $event" [item]="itemSelecionado" />
