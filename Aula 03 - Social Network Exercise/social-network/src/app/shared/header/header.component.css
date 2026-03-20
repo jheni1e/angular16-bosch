@@ -4,7 +4,7 @@
     align-items: center;
     width: 100%;
     height: 5vh;
-    background-color: #9c050b;
+    background-color: transparent;
     top: 0; left: 0;
 }
 
@@ -12,7 +12,7 @@
     margin: 1.5vh;
     text-decoration: none;
     font-size: 2.2vh;
-    color: #fff;
+    color: #000;
     font-family: Verdana;
 }
 

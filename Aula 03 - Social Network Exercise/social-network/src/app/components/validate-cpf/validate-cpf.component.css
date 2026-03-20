@@ -1,0 +1,46 @@
+.cpf-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cpf-container label {
+  font-size: 14px;
+  color: #536471;
+}
+
+.cpf-container input {
+  background-color: #fff;
+  border: 1px solid #cfd9de;
+  border-radius: 6px;
+  padding: 10px;
+  color: #0f1419;
+  outline: none;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.cpf-container input:focus {
+  border-color: #1d9bf0;
+  box-shadow: 0 0 0 1px #1d9bf0;
+}
+
+.cpf-container button {
+  margin-top: 5px;
+  background-color: #eff3f4;
+  color: #0f1419;
+  border: none;
+  border-radius: 999px;
+  padding: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cpf-container button:hover {
+  background-color: #e6ecf0;
+}
+
+.cpf-container button:active {
+  transform: scale(0.98);
+}

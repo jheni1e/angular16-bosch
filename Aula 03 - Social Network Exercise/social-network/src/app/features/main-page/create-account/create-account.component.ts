@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-create-account',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./create-account.component.css']
 })
 export class CreateAccountComponent {
-
+  @Output()
+  dataChange: EventEmitter<string> = new EventEmitter();
 }
