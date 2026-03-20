@@ -10,29 +10,35 @@ export class ValidateCpfComponent {
   dataChange: EventEmitter<string> = new EventEmitter();
 
   cpfValue: string = '';
+  @Output()
+  validChange: EventEmitter<boolean> = new EventEmitter();
 
   changed(e: Event) {
     this.cpfValue = (e.target as HTMLInputElement).value;
+    const isValid = this.validateCpf(this.cpfValue, false);
+    this.dataChange.emit(this.cpfValue);
+    this.validChange.emit(isValid);
   }
 
   submit() {
-    this.validateCpf(this.cpfValue);
+    const isValid = this.validateCpf(this.cpfValue);
     this.dataChange.emit(this.cpfValue);
+    this.validChange.emit(isValid);
   }
 
-  validateCpf(cpf: string) {
-    if (!cpf) return;
+  validateCpf(cpf: string, showAlert: boolean = true): boolean {
+    if (!cpf) return false;
 
     cpf = cpf.replace(/[^\d]+/g, '');
 
     if (cpf.length !== 11) {
-      alert('CPF inválido');
-      return;
+      if (showAlert) alert('CPF inválido');
+      return false;
     }
 
     if (/^(\d)\1+$/.test(cpf)) {
-      alert('CPF inválido');
-      return;
+      if (showAlert) alert('CPF inválido');
+      return false;
     }
 
     let soma = 0;
@@ -44,8 +50,8 @@ export class ValidateCpfComponent {
     if (resto === 10 || resto === 11) resto = 0;
 
     if (resto !== parseInt(cpf.charAt(9))) {
-      alert('CPF inválido');
-      return;
+      if (showAlert) alert('CPF inválido');
+      return false;
     }
 
     soma = 0;
@@ -57,10 +63,11 @@ export class ValidateCpfComponent {
     if (resto === 10 || resto === 11) resto = 0;
 
     if (resto !== parseInt(cpf.charAt(10))) {
-      alert('CPF inválido');
-      return;
+      if (showAlert) alert('CPF inválido');
+      return false;
     }
 
-    alert('CPF válido!');
+    if (showAlert) alert('CPF válido!');
+    return true;
   }
 }
