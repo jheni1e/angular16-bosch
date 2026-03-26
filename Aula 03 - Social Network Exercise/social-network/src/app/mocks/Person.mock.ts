@@ -18,4 +18,5 @@ const MockPeople: IPerson[] = [
         cpf: "999.990.909-99"
     }
 ]
+
 export default MockPeople;
